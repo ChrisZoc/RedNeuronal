@@ -31,14 +31,14 @@ public class RedNeuronalAND {
         double [] results = new double [12];
 
         
-       for(int i=0;i<3;i++)
+       for(int i=0;i<2;i++)
         {
             neuro.epoca(0, 0, 0);
             results[0] = neuro.getW1();
             results[1] = neuro.getW2();
             results[2] = neuro.getUmbral();
-            results[3] = Double.parseDouble(array[0]);
-            results[4] = Double.parseDouble(array[1]);
+            results[3] = 0;
+            results[4] = 0;
             results[5] = neuro.getA();
             results[6] = neuro.getY();
             results[7] = neuro.getTarget();
@@ -52,8 +52,8 @@ public class RedNeuronalAND {
             results[0] = neuro.getW1();
             results[1] = neuro.getW2();
             results[2] = neuro.getUmbral();
-            results[3] = Double.parseDouble(array[0]);
-            results[4] = Double.parseDouble(array[1]);
+            results[3] = 0;
+            results[4] = 1;
             results[5] = neuro.getA();
             results[6] = neuro.getY();
             results[7] = neuro.getTarget();
@@ -67,8 +67,8 @@ public class RedNeuronalAND {
             results[0] = neuro.getW1();
             results[1] = neuro.getW2();
             results[2] = neuro.getUmbral();
-            results[3] = Double.parseDouble(array[0]);
-            results[4] = Double.parseDouble(array[1]);
+            results[3] = 1;
+            results[4] = 0;
             results[5] = neuro.getA();
             results[6] = neuro.getY();
             results[7] = neuro.getTarget();
@@ -82,8 +82,8 @@ public class RedNeuronalAND {
             results[0] = neuro.getW1();
             results[1] = neuro.getW2();
             results[2] = neuro.getUmbral();
-            results[3] = Double.parseDouble(array[0]);
-            results[4] = Double.parseDouble(array[1]);
+            results[3] = 1;
+            results[4] = 1;
             results[5] = neuro.getA();
             results[6] = neuro.getY();
             results[7] = neuro.getTarget();

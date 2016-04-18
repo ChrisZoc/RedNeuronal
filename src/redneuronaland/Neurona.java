@@ -35,7 +35,6 @@ public class Neurona {
     }
     
     public void epoca (int x1, int x2, int t){
-        double [] array = new double[4];
         w1 += incrementoW1;
         w2 += incrementoW2;
         umbral += incrementoUmbral;
@@ -46,8 +45,13 @@ public class Neurona {
         if(y != target){
             this.alphaTY = this.alpha*(target - y);
             this.incrementoW1 = alphaTY * x1;
-            this.incrementoW1 = alphaTY * x2;
+            this.incrementoW2 = alphaTY * x2;
             this.incrementoUmbral = -1 *alphaTY;
+        }else {
+            this.alphaTY = 0;
+            this.incrementoW1 = 0;
+            this.incrementoW2 = 0;
+            this.incrementoUmbral = 0;            
         }
     }
 
