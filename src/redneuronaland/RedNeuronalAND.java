@@ -25,15 +25,75 @@ public class RedNeuronalAND {
         double alpha = Double.parseDouble(array[3]);
         
         Neurona neuro = new Neurona(w1,w2,umbral, alpha);
-        aux = JOptionPane.showInputDialog(null,"Ingresa el x1, x2", JOptionPane.WARNING_MESSAGE);
-        array = aux.split(",");
-        double [] arrayDouble;
-        while(true){
-            arrayDouble = neuro.epoca(Integer.parseInt(array[0]),Integer.parseInt(array[1]), 0);
-        }
+        Tabla tabla = new Tabla();
+  
+        int epoca = 0;
+        double [] results = new double [12];
 
         
-        
+       for(int i=0;i<3;i++)
+        {
+            neuro.epoca(0, 0, 0);
+            results[0] = neuro.getW1();
+            results[1] = neuro.getW2();
+            results[2] = neuro.getUmbral();
+            results[3] = Double.parseDouble(array[0]);
+            results[4] = Double.parseDouble(array[1]);
+            results[5] = neuro.getA();
+            results[6] = neuro.getY();
+            results[7] = neuro.getTarget();
+            results[8] = neuro.getAlphaTY();
+            results[9] = neuro.getIncrementoW1();
+            results[10] = neuro.getIncrementoW2();
+            results[11] = neuro.getIncrementoUmbral();
+            tabla.fillTable(results, epoca);
+                        epoca++;
+            neuro.epoca(0, 1, 0);
+            results[0] = neuro.getW1();
+            results[1] = neuro.getW2();
+            results[2] = neuro.getUmbral();
+            results[3] = Double.parseDouble(array[0]);
+            results[4] = Double.parseDouble(array[1]);
+            results[5] = neuro.getA();
+            results[6] = neuro.getY();
+            results[7] = neuro.getTarget();
+            results[8] = neuro.getAlphaTY();
+            results[9] = neuro.getIncrementoW1();
+            results[10] = neuro.getIncrementoW2();
+            results[11] = neuro.getIncrementoUmbral();
+            tabla.fillTable(results, epoca);
+                        epoca++;
+            neuro.epoca(1, 0, 0);
+            results[0] = neuro.getW1();
+            results[1] = neuro.getW2();
+            results[2] = neuro.getUmbral();
+            results[3] = Double.parseDouble(array[0]);
+            results[4] = Double.parseDouble(array[1]);
+            results[5] = neuro.getA();
+            results[6] = neuro.getY();
+            results[7] = neuro.getTarget();
+            results[8] = neuro.getAlphaTY();
+            results[9] = neuro.getIncrementoW1();
+            results[10] = neuro.getIncrementoW2();
+            results[11] = neuro.getIncrementoUmbral();
+            tabla.fillTable(results, epoca);
+                        epoca++;
+            neuro.epoca(1, 1, 1);
+            results[0] = neuro.getW1();
+            results[1] = neuro.getW2();
+            results[2] = neuro.getUmbral();
+            results[3] = Double.parseDouble(array[0]);
+            results[4] = Double.parseDouble(array[1]);
+            results[5] = neuro.getA();
+            results[6] = neuro.getY();
+            results[7] = neuro.getTarget();
+            results[8] = neuro.getAlphaTY();
+            results[9] = neuro.getIncrementoW1();
+            results[10] = neuro.getIncrementoW2();
+            results[11] = neuro.getIncrementoUmbral();
+            tabla.fillTable(results, epoca);
+                        epoca++;
+        }
+        tabla.setVisible(true);
     }
-    
 }

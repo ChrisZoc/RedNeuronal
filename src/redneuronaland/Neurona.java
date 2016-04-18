@@ -14,6 +14,8 @@ public class Neurona {
    private double w2;
    private double umbral;
    private double alpha;
+   private double a;
+   private double y;
    private int target;
    private double alphaTY;
    private double incrementoW1;
@@ -32,14 +34,13 @@ public class Neurona {
         incrementoUmbral = 0;
     }
     
-    public double [] epoca (int x1, int x2, int t){
+    public void epoca (int x1, int x2, int t){
         double [] array = new double[4];
         w1 += incrementoW1;
         w2 += incrementoW2;
         umbral += incrementoUmbral;
         this.target = t;
-        double a = (x1 * w1) + (x2 * w2);
-        int y;
+        this.a = (x1 * w1) + (x2 * w2);
         if(a>=umbral)y = 1;
         else y = 0;
         if(y != target){
@@ -48,11 +49,6 @@ public class Neurona {
             this.incrementoW1 = alphaTY * x2;
             this.incrementoUmbral = -1 *alphaTY;
         }
-        array[0]=alphaTY;
-        array[1]=incrementoW1;
-        array[2]=incrementoW2;
-        array[3]=incrementoUmbral;
-        return array;
     }
 
     public double getW1() {
@@ -70,7 +66,12 @@ public class Neurona {
     public double getAlpha() {
         return alpha;
     }
-
+    public double getA() {
+        return a;
+    }       
+    public double getY() {
+        return y;
+    }
     public int getTarget() {
         return target;
     }
