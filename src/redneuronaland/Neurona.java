@@ -17,6 +17,8 @@ public class Neurona {
    private double a;
    private double y;
    private int target;
+   private int x1;
+   private int x2;
    private double alphaTY;
    private double incrementoW1;
    private double incrementoW2;
@@ -38,6 +40,8 @@ public class Neurona {
         w1 += incrementoW1;
         w2 += incrementoW2;
         umbral += incrementoUmbral;
+        this.x1 = x1;
+        this.x2 = x2;
         this.target = t;
         this.a = (x1 * w1) + (x2 * w2);
         if(a>=umbral)y = 1;
@@ -47,7 +51,7 @@ public class Neurona {
             this.incrementoW1 = alphaTY * x1;
             this.incrementoW2 = alphaTY * x2;
             this.incrementoUmbral = -1 *alphaTY;
-        }else {
+        }else{
             this.alphaTY = 0;
             this.incrementoW1 = 0;
             this.incrementoW2 = 0;
@@ -58,15 +62,12 @@ public class Neurona {
     public double getW1() {
         return w1;
     }
-
     public double getW2() {
         return w2;
     }
-
     public double getUmbral() {
         return umbral;
     }
-
     public double getAlpha() {
         return alpha;
     }
@@ -79,19 +80,21 @@ public class Neurona {
     public int getTarget() {
         return target;
     }
-
+    public int getX1() {
+        return this.x1;
+    }
+    public int getX2() {
+        return x2;
+    }
     public double getAlphaTY() {
         return alphaTY;
     }
-
     public double getIncrementoW1() {
         return incrementoW1;
     }
-
     public double getIncrementoW2() {
         return incrementoW2;
     }
-
     public double getIncrementoUmbral() {
         return incrementoUmbral;
     }
