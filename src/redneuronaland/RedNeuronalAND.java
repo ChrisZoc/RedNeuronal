@@ -63,6 +63,5 @@ public class RedNeuronalAND {
 
         }
         tabla.setVisible(true);
-    }
-   
+    }  
 }

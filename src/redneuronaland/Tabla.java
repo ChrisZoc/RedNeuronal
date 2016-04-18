@@ -5,6 +5,8 @@
  */
 package redneuronaland;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author FRK
@@ -64,6 +66,11 @@ public class Tabla extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTabla);
 
         btnNext.setText("Resultados");
+        btnNext.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnNextMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -71,10 +78,10 @@ public class Tabla extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnNext))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 929, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 929, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnNext)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -82,8 +89,9 @@ public class Tabla extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addComponent(btnNext))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(btnNext)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -101,6 +109,13 @@ public class Tabla extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnNextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNextMouseClicked
+        JOptionPane.showMessageDialog(null,"Los pesos finales son w1: "+jTabla.getValueAt(12, 0)+ " w2: "+
+                                        jTabla.getValueAt(12, 1),"Salida", JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null,"El umbral es: "+jTabla.getValueAt(12, 2),"Salida", JOptionPane.WARNING_MESSAGE);
+        //Graficacion gr = new Graficacion();
+    }//GEN-LAST:event_btnNextMouseClicked
 
     
     public static void main(String args[]) {
